@@ -1,1 +1,20 @@
 language: go
+
+matrix:
+    fast_finish: true
+    include:
+    - go: master
+
+git:
+    depth: 10
+
+go_import_path: github.com/moreandres/api
+
+script:
+  - make vet
+  - make fmt-check
+  - make misspell-check
+  - make test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
