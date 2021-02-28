@@ -8,6 +8,7 @@
 [![Open Source Helpers](https://www.codetriage.com/moreandres/api/badges/users.svg)](https://www.codetriage.com/moreandres/api)
 [![Release](https://img.shields.io/github/release/moreandres/api.svg?style=flat-square)](https://github.com/moreandres/api/releases)
 [![TODOs](https://badgen.net/https/api.tickgit.com/badgen/github.com/moreandres/api)](https://www.tickgit.com/browse?repo=github.com/moreandres/api)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmoreandres%2Fapi.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmoreandres%2Fapi?ref=badge_shield)
 
 ## What?
 
@@ -103,3 +104,6 @@ Config (viper) -> Routes (gin) -> JSON Schema (jsonschema) -> Datbabasabase (Ggr
 sudo apt update
 sudo apt upgrade
 sudo apt install golang golang-golang-x-tools
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmoreandres%2Fapi.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmoreandres%2Fapi?ref=badge_large)
