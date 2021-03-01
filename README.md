@@ -17,32 +17,32 @@ API quickly runs [JSON-API](https://jsonapi.org/) compliant resources defined by
 ## Usage
 
 ```sh
-$ go get -u github.com/moreandres/api
-$ API_SCHEMA=schema.json api
+$ docker build -t my-api .
+$ docker run -it --rm --name my-running-api my-api
 ```
 
 ## Details
 
 API will expose a compliant resource data including:
 
-1. Fetching
+1. Creating
+```
+POST /v1/resource
+```
+
+2. Fetching
 ```
 GET /v1/resource
 GET /v1/resource?sort=-id&page=0&limit=10
 GET /v1/resource/{id}
 ```
 
-2. Creating
-```
-POST /v1/resource
-```
-
-4. Updating
+3. Updating
 ```
 PATCH /v1/resource/{id}
 ```
 
-6. Deleting
+4. Deleting
 ```
 DELETE /v1/resource/{id}
 ```
