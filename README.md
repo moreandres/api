@@ -96,11 +96,8 @@ API uses API_XXX environment variables or configuration files
 API uses:
 
 1. [sirupsen/logrus](https://github.com/sirupsen/logrus) for logging.
-
 2. [qri-io/jsonschema](https://github.com/qri-io/jsonschema) for JSON-Schema validation.
-
 3. [cobra](https://github.com/spf13/cobra) for reading configuration from environment and configuration files.
-
 4. [gin](https://github.com/gin-gonic/gin) as web framework to expose resources.
-
 5. [gorm](https://github.com/go-gorm/gorm) for ORM to store and retrieve data.
+
