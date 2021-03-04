@@ -3,8 +3,6 @@ module github.com/moreandres/api
 go 1.15
 
 require (
-	9fans.net/go v0.0.2 // indirect
-	github.com/acroca/go-symbols v0.1.1 // indirect
 	github.com/andybalholm/brotli v1.0.1 // indirect
 	github.com/appleboy/gin-revision-middleware v0.0.0-20160722161421-cc548e45b51a
 	github.com/aviddiviner/gin-limit v0.0.0-20170918012823-43b5f79762c1
@@ -32,15 +30,12 @@ require (
 	github.com/mattn/go-colorable v0.1.8 // indirect
 	github.com/mattn/go-sqlite3 v1.14.6 // indirect
 	github.com/mitchellh/mapstructure v1.4.0 // indirect
-	github.com/nsf/gocode v0.0.0-20190302080247-5bee97b48836 // indirect
 	github.com/nxadm/tail v1.4.6 // indirect
 	github.com/onsi/ginkgo v1.14.2 // indirect
 	github.com/onsi/gomega v1.10.4 // indirect
 	github.com/pelletier/go-toml v1.8.1 // indirect
 	github.com/qri-io/jsonschema v0.2.0
-	github.com/ramya-rao-a/go-outline v0.0.0-20200117021646-2a048b4510eb // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
-	github.com/rogpeppe/godef v1.1.2 // indirect
 	github.com/savsgio/gotils v0.0.0-20210104124744-6f231281f370 // indirect
 	github.com/semihalev/gin-stats v0.0.0-20180505163755-30fdcbbd3533
 	github.com/sergi/go-diff v1.1.0 // indirect
@@ -60,7 +55,6 @@ require (
 	golang.org/x/sys v0.0.0-20210227040730-b0d1d43c014d // indirect
 	golang.org/x/text v0.3.4 // indirect
 	golang.org/x/tools v0.1.0 // indirect
-	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/protobuf v1.25.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/ini.v1 v1.62.0 // indirect

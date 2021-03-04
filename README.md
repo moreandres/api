@@ -1,109 +1,103 @@
 # API
 
+API quickly runs [JSON-API](https://jsonapi.org/) compliant resources defined by using [JSON-Schema](https://json-schema.org/) attributes definition.
+
+## Badges
+
 [![Build Status](https://travis-ci.org/moreandres/api.svg)](https://travis-ci.org/moreandres/api)
 [![codecov](https://codecov.io/gh/moreandres/api/branch/master/graph/badge.svg)](https://codecov.io/gh/moreandres/api)
 [![Go Report Card](https://goreportcard.com/badge/github.com/moreandres/api)](https://goreportcard.com/report/github.com/moreandres/api)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmoreandres%2Fapi.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmoreandres%2Fapi?ref=badge_shield)
 [![GoDoc](https://pkg.go.dev/badge/github.com/moreandres/api?status.svg)](https://pkg.go.dev/github.com/moreandres/api?tab=doc)
 [![Sourcegraph](https://sourcegraph.com/github.com/moreandres/api/-/badge.svg)](https://sourcegraph.com/github.com/moreandres/api?badge)
 [![Open Source Helpers](https://www.codetriage.com/moreandres/api/badges/users.svg)](https://www.codetriage.com/moreandres/api)
 [![Release](https://img.shields.io/github/release/moreandres/api.svg?style=flat-square)](https://github.com/moreandres/api/releases)
 [![TODOs](https://badgen.net/https/api.tickgit.com/badgen/github.com/moreandres/api)](https://www.tickgit.com/browse?repo=github.com/moreandres/api)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmoreandres%2Fapi.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmoreandres%2Fapi?ref=badge_shield)
 
-## What?
+## Usage
 
-Run [JSON-API](https://jsonapi.org/) compliant APIs defined using attributes [JSON-Schema](https://json-schema.org/) definitions.
-
-## Why?
-
-Quickly run compliant APIs without coding.
-
-## How?
-
-1. [sirupsen/logrus](https://github.com/sirupsen/logrus) for logging.
-
-1. [qri-io/jsonschema](https://github.com/qri-io/jsonschema) for json schema.
-
-1. [viper](https://github.com/spf13/viper) for command line handling.
-
-1. [cobra](https://github.com/spf13/cobra) for reading configuration.
-
-1. [gin](https://github.com/gin-gonic/gin) as web framework.
-
-1. [gorm](https://github.com/go-gorm/gorm) for ORM.
-
-## Example
-
-Given `persons.json` defined as
- ```
-{
-    "type": "object",
-    "properties": {
-        "first_name": { "type": "string" },
-        "last_name": { "type": "string" },
-        "birthday": { "type": "string", "format": "date" },
-        "address": {
-            "type": "object",
-            "properties": {
-                "street_address": { "type": "string" },
-                "city": { "type": "string" },
-                "state": { "type": "string" },
-                "country": { "type" : "string" }
-            }
-        }
-    }
-}
+```sh
+$ docker build -t my-api .
+$ docker run -p 8080:8080 -it --rm --name my-running-api my-api
 ```
 
-The running `api run --schema persons.json` will expose a compliant CRUD which can be exercised as below.
+## Details
 
-1. GET /persons -> 2001, []
+API will expose a compliant resource data including:
 
-1. GET /persons/{uuid} -> 404
+1. Creating
+```
+POST /v1/resource
+```
 
-1. POST /persons { a } -> 201, [ { a } ] 
+2. Fetching
+```
+GET /v1/resource
+GET /v1/resource?sort=-id&page=0&limit=10
+GET /v1/resource/{id}
+```
 
-1. POST /persons { b } -> 201, [ { b } ]
+3. Updating
+```
+PATCH /v1/resource/{id}
+```
 
-1. GET /persons?filter=a&sort=a&page=0&limit=100 -> 200, [ a, b ] 
+4. Deleting
+```
+DELETE /v1/resource/{id}
+```
 
-1. GET /persons -> 200, [ a, b ]
+API will also expose supporting resources for health check and profiling
 
-1. GET /persons/{uuid} -> 200
+1. Health
+```
+GET /v1/health
+```
 
-1. DELETE /persons/{uuid} -> 200
+2. Profiling
+```
+GET /debug/pprof
+```
 
-Additional middlewares are enabled as well.
+API adds middleware to:
 
-1. Basic Auth using JWT tokens
+1. Failover from failures
+2. Include service revision
+3. Limit concurrent connections
+4. Include basic security controls
+5. Restrict access
+6. Keep usage statistics
+7. Avoid CORS issues
+8. Support compression
+9. Include request ID
 
-1. OPTIONS
+Check API tests for further usage details.
 
-1. Health probes /liveness /readiness /startup
+## Configuration
 
-1. Logging
+API uses API_XXX environment variables or configuration files
 
-1. Recovery 
+1. LogLevel (Info)
+2. SchemaName (objects.json)
+3. DbUri (file::memory:?cache=shared)
+4. HttpPort (8080)
+5. UseSSL (false)
+6. HttpsPort (8443)
+7. CertFile (api.cer)
+8. KeyFile (api.key)
+9. URL (https://localhost.com)
+10. QueryLimit (512)
+11. JwtSecret (password)
+12. MaxAllowed (20)
+13. AccessCidr (0.0.0.0/0)
 
-1. CORS and CSRF middlewares are enabled
+## Implementation
 
-1. Transaction/Correlation/Revision ID
+API uses:
 
-1. Rate-limits per Client
+1. [sirupsen/logrus](https://github.com/sirupsen/logrus) for logging.
+2. [qri-io/jsonschema](https://github.com/qri-io/jsonschema) for JSON-Schema validation.
+3. [cobra](https://github.com/spf13/cobra) for reading configuration from environment and configuration files.
+4. [gin](https://github.com/gin-gonic/gin) as web framework to expose resources.
+5. [gorm](https://github.com/go-gorm/gorm) for ORM to store and retrieve data.
 
-1. Stats middleware
-
-*Note*: Client headers should contain `Content-Type: application/vnd.api+json`
-
-## Design
-
-Config (viper) -> Routes (gin) -> JSON Schema (jsonschema) -> Datbabasabase (Ggrgorm)
-
-## Collaborate
-
-sudo apt update
-sudo apt upgrade
-sudo apt install golang golang-golang-x-tools
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmoreandres%2Fapi.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmoreandres%2Fapi?ref=badge_large)
