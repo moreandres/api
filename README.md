@@ -101,3 +101,22 @@ API uses:
 4. [gin](https://github.com/gin-gonic/gin) as web framework to expose resources.
 5. [gorm](https://github.com/go-gorm/gorm) for ORM to store and retrieve data.
 
+## Deployment
+
+API can be deployed using classic infrastructure. CloudWatch metrics and logs are enabled. Session Manager can be used to SSH into instances.
+
+```
+$ terraform init
+$ terraform apply
+$ terraform destroy
+```
+
+## Windows Development
+
+1. Enable [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps)
+2. Install [chocolatey](https://chocolatey.org/install)
+3. Install tooling
+
+```
+$ choco install git git-lfs github-desktop docker-desktop golang mingw packer terraform vscode python minikube vagrant virtualbox
+```
