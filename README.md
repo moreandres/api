@@ -4,7 +4,7 @@ API quickly runs [JSON-API](https://jsonapi.org/) compliant resources defined by
 
 ## Badges
 
-[![Build Status](https://travis-ci.org/moreandres/api.svg)](https://travis-ci.org/moreandres/api)
+[![CircleCI](https://circleci.com/gh/moreandres/api.svg?style=shield)](https://circleci.com/gh/moreandres/api)
 [![codecov](https://codecov.io/gh/moreandres/api/branch/master/graph/badge.svg)](https://codecov.io/gh/moreandres/api)
 [![Go Report Card](https://goreportcard.com/badge/github.com/moreandres/api)](https://goreportcard.com/report/github.com/moreandres/api)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmoreandres%2Fapi.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmoreandres%2Fapi?ref=badge_shield)
