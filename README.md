@@ -17,8 +17,8 @@ API quickly runs [JSON-API](https://jsonapi.org/) compliant resources defined by
 ## Usage
 
 ```sh
-$ docker build -t my-api .
-$ docker run -p 8080:8080 -it --rm --name my-running-api my-api
+docker build -t my-api .
+docker run -p 8080:8080 -it --rm --name my-running-api my-api
 ```
 
 ## Details
@@ -26,36 +26,42 @@ $ docker run -p 8080:8080 -it --rm --name my-running-api my-api
 API will expose a compliant resource data including:
 
 1. Creating
-```
+
+```sh
 POST /v1/resource
 ```
 
-2. Fetching
-```
+1. Fetching
+
+```sh
 GET /v1/resource
 GET /v1/resource?sort=-id&page=0&limit=10
 GET /v1/resource/{id}
 ```
 
-3. Updating
-```
+1. Updating
+
+```sh
 PATCH /v1/resource/{id}
 ```
 
-4. Deleting
-```
+1. Deleting
+
+```sh
 DELETE /v1/resource/{id}
 ```
 
 API will also expose supporting resources for health check and profiling
 
 1. Health
-```
+
+```sh
 GET /v1/health
 ```
 
-2. Profiling
-```
+1. Profiling
+
+```sh
 GET /debug/pprof
 ```
 
@@ -85,7 +91,7 @@ API uses API_XXX environment variables or configuration files
 6. HttpsPort (8443)
 7. CertFile (api.cer)
 8. KeyFile (api.key)
-9. URL (https://localhost.com)
+9. URL
 10. QueryLimit (512)
 11. JwtSecret (password)
 12. MaxAllowed (20)
@@ -105,10 +111,10 @@ API uses:
 
 API can be deployed using classic infrastructure. CloudWatch metrics and logs are enabled. Session Manager can be used to SSH into instances.
 
-```
-$ terraform init
-$ terraform apply
-$ terraform destroy
+```sh
+terraform init
+terraform apply
+terraform destroy
 ```
 
 ## Windows Development
@@ -117,6 +123,6 @@ $ terraform destroy
 2. Install [chocolatey](https://chocolatey.org/install)
 3. Install tooling
 
-```
-$ choco install git git-lfs github-desktop docker-desktop golang mingw packer terraform vscode python minikube vagrant virtualbox
+```sh
+choco install git git-lfs github-desktop docker-desktop golang mingw packer terraform vscode python minikube vagrant virtualbox
 ```
