@@ -8,7 +8,7 @@ require (
 	github.com/bu/gin-access-limit v1.0.1
 	github.com/danielkov/gin-helmet v0.0.0-20171108135313-1387e224435e
 	github.com/fsnotify/fsnotify v1.5.4
-	github.com/gavv/httpexpect/v2 v2.1.0
+	github.com/gavv/httpexpect/v2 v2.3.1
 	github.com/gin-contrib/cors v1.3.1
 	github.com/gin-contrib/gzip v0.0.5
 	github.com/gin-contrib/pprof v1.3.0
@@ -78,7 +78,6 @@ require (
 	github.com/qri-io/jsonpointer v0.1.1 // indirect
 	github.com/rcrowley/go-metrics v0.0.0-20201227073835-cf1acfcdf475 // indirect
 	github.com/sagikazarmark/crypt v0.5.0 // indirect
-	github.com/savsgio/gotils v0.0.0-20210104124744-6f231281f370 // indirect
 	github.com/sergi/go-diff v1.1.0 // indirect
 	github.com/spf13/afero v1.8.2 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
