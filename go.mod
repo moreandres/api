@@ -18,7 +18,7 @@ require (
 	github.com/semihalev/gin-stats v0.0.0-20180505163755-30fdcbbd3533
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/viper v1.12.0
-	gorm.io/datatypes v1.0.6
+	gorm.io/datatypes v1.0.7
 	gorm.io/driver/sqlite v1.3.5
 	gorm.io/gorm v1.23.6
 )
