@@ -16,7 +16,7 @@ require (
 	github.com/gin-gonic/gin v1.8.1
 	github.com/qri-io/jsonschema v0.2.1
 	github.com/semihalev/gin-stats v0.0.0-20180505163755-30fdcbbd3533
-	github.com/sirupsen/logrus v1.8.1
+	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/viper v1.12.0
 	gorm.io/datatypes v1.0.7
 	gorm.io/driver/sqlite v1.3.6
@@ -109,7 +109,7 @@ require (
 	golang.org/x/crypto v0.0.0-20220513210258-46612604a0f9 // indirect
 	golang.org/x/net v0.0.0-20220520000938-2e3eb7b945c2 // indirect
 	golang.org/x/oauth2 v0.0.0-20220411215720-9780585627b5 // indirect
-	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a // indirect
+	golang.org/x/sys v0.0.0-20220715151400-c0bba94af5f8 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/xerrors v0.0.0-20220517211312-f3a8303e98df // indirect
 	google.golang.org/api v0.81.0 // indirect
