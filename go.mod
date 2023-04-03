@@ -1,6 +1,6 @@
 module github.com/moreandres/api
 
-go 1.18
+go 1.20
 
 require (
 	github.com/appleboy/gin-revision-middleware v0.0.0-20160722161421-cc548e45b51a
