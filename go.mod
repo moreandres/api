@@ -19,8 +19,8 @@ require (
 	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/viper v1.15.0
 	gorm.io/datatypes v1.1.1
-	gorm.io/driver/sqlite v1.4.4
-	gorm.io/gorm v1.24.6
+	gorm.io/driver/sqlite v1.5.0
+	gorm.io/gorm v1.24.7-0.20230306060331-85eaf9eeda11
 )
 
 require (
