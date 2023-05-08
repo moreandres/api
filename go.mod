@@ -20,7 +20,7 @@ require (
 	github.com/spf13/viper v1.15.0
 	gorm.io/datatypes v1.1.1
 	gorm.io/driver/sqlite v1.4.4
-	gorm.io/gorm v1.24.6
+	gorm.io/gorm v1.25.1
 )
 
 require (
