@@ -7,7 +7,7 @@ require (
 	github.com/aviddiviner/gin-limit v0.0.0-20170918012823-43b5f79762c1
 	github.com/bu/gin-access-limit v1.0.1
 	github.com/danielkov/gin-helmet v0.0.0-20171108135313-1387e224435e
-	github.com/fsnotify/fsnotify v1.6.0
+	github.com/fsnotify/fsnotify v1.7.0
 	github.com/gavv/httpexpect/v2 v2.15.0
 	github.com/gin-contrib/cors v1.4.0
 	github.com/gin-contrib/gzip v0.0.6
